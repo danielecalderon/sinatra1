@@ -1,5 +1,17 @@
 #sinatra1.rb
-require 'sinatra'  
+
+require 'sinatra' 
+
+enable :sessions
+
+get "/set" do
+    session[:message] = params[:message]
+    "session saved"
+  end 
+get "/get" do
+    session[:message]
+  end
+
 
 get '/' do
   "Hello, World!"
@@ -65,8 +77,8 @@ get '/logon.html' do
 </html>"
 end
 
-post "/logon" do
-    "<h1></h1>"
+get "/logon" do
+    "<h1>Suceesful faliure</h1>"
     "<h1>#{params[:username]}</h1>"
     if params[:username] == "bob" 
       "SUCCESS"
@@ -75,3 +87,33 @@ post "/logon" do
     end
 
   end
+  
+get "/name.html" do
+  "<!DOCTYPE html>
+<html>
+    <body>
+    <form action='/hello' method='POST'>
+       
+            Message:
+            <input type= 'text' name= 'name'>
+          
+            <input type= 'submit' value='submit'>
+        </form>
+    </body>
+</html>"
+  
+end
+
+get "/hello" do
+    session[:name] = params[:name]
+    "Saved the name"
+  end 
+get "/get" do
+    session[:name]
+  end
+
+get "/greet" do
+  Hello #{params[:name],session[:name]}
+
+end
+
