@@ -113,7 +113,6 @@ get "/get" do
   end
 
 get "/greet" do
-  Hello #{params[:name],session[:name]}
+  Hello #{params[:name],session[:session]}
 
 end
-
