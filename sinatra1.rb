@@ -116,3 +116,7 @@ get "/greet" do
   Hello #{params[:name],session[:session]}
 
 end
+
+# get ‘/howmany’ 
+
+# post ‘/candles’

@@ -42,6 +42,6 @@ get '/hello' do
   end
 
   get "/greet" do
-  Hello #{params[:name],session[:name]}
+  Hello #{session[:name]}
 
 end
