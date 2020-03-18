@@ -117,6 +117,11 @@ get "/greet" do
 
 end
 
-# get ‘/howmany’ 
+get '/howmany' do
+  erb :howmany
+  
+end
 
-# post ‘/candles’
+post '/candles' do
+  erb :candles
+end

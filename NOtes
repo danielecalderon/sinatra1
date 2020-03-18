@@ -1,0 +1,15 @@
+<form action='/submitted' method='GET'>
+       
+            Message:
+            <input type= 'How many Candles' name= ''>
+            <input type= 'submit' value='submit'>
+        </form>
+        
+        
+        
+        
+        
+get '/' do
+    @my_array = db.execute("SELECT" * FROM users;")
+    erb :results
+end
